@@ -4,13 +4,15 @@
 
 // Graphic chart
 $white: #fff;
-$grey: #262626;
-$darkgrey: #313237;
-$black: #010101;
+$grey: #313237;
+$grey-t: #535353;
+$darkgrey: #18191C;
+$black: #000106;
 $blue: #029DE0;
+$pink: #FF43E7
 $color1: $blue;
 $error: $red;
-$success: $green;
+
 // Using Sass Maps as explained here : https://jonsuh.com/blog/sass-maps/
 $social-colors: (facebook: #3b5998, twitter: #43bfe1, dribbble: #ea4c89, github: #171515, google: #db4437, youtube: #c4302b);
 .social-link {

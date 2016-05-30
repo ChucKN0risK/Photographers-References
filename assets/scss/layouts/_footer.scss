@@ -13,7 +13,7 @@
 
   @include mq($from: tablet) {
     flex-direction: row;
-    align-items: center;
+    align-items: flex-end;
   }
 
   .copyrights {

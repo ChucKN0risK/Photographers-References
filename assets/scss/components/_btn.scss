@@ -49,12 +49,6 @@
   cursor: pointer;
 }
 
-%tiny {
-  padding-right: .3rem;
-  padding-left: .3rem;
-  font-size: ms(-1);
-}
-
 %small {
   padding-right: .5rem;
   padding-left: .5rem;
@@ -114,10 +108,6 @@
   &--primary {
     @extend %button;
     @extend %primary;
-  }
-
-  &--tiny {
-    @extend %tiny;
   }
 
   &--small {

@@ -1,0 +1,59 @@
+/* ==|====================
+   Components / Book
+   ======================= */
+
+.books-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.book {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  @include mq($from: tablet) {
+    width: 30%;
+  }
+}
+
+.book__img {
+  height: 15rem;
+
+  img {
+    height: 100%;
+    width: auto;
+  }
+}
+
+.book__cta {
+  color: $white;
+  font-family: $Gotham-M;
+  background-color: $grey;
+  @include transition;
+
+  .book:hover &.author1,
+  &.author1:hover {
+    background-color: $gold;
+  }
+
+  .book:hover &.author2,
+  &.author2:hover {
+    background-color: $blue;
+  }
+
+  .book:hover &.author3,
+  &.author3:hover {
+    background-color: $pink;
+  }
+}
+

@@ -2,8 +2,11 @@
 // == Text Wrapper
 // ----------------------
 .text-wrapper {
-  margin-bottom: 2rem;
   max-width: 35rem;
+
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
   
   p + p {
     margin-top: 1rem;

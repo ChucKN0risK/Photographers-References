@@ -2,15 +2,14 @@
    Components / Book
    ======================= */
 
-.books-wrapper {
+.books-thumbs-wrapper {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
   width: 100%;
-  margin-bottom: 2rem;
 }
 
-.book {
+.book-thumb {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,7 +25,7 @@
   }
 }
 
-.book__img {
+.book-thumb__img {
   height: 15rem;
 
   img {
@@ -35,25 +34,79 @@
   }
 }
 
+.book-thumb__cta,
 .book__cta {
   color: $white;
   font-family: $Gotham-M;
   background-color: $grey;
   @include transition;
 
-  .book:hover &.author1,
+  .book-thumb:hover &.author1,
   &.author1:hover {
     background-color: $gold;
   }
 
-  .book:hover &.author2,
+  .book-thumb:hover &.author2,
   &.author2:hover {
     background-color: $blue;
   }
 
-  .book:hover &.author3,
+  .book-thumb:hover &.author3,
   &.author3:hover {
     background-color: $pink;
   }
 }
 
+.book {
+  display: flex;
+  flex-flow: row wrap;
+  .video {
+    width: 100%;
+  }
+}
+
+.book__content {
+  width: 100%;
+}
+
+.book__img {
+  width: 100%;
+}
+
+.book__infos {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.book__price {
+  display: flex;
+  margin-top: 1rem;
+  height: 3rem;
+  color: $grey-t;
+  font-family: $Gotham-M;
+
+  .book__price__text,
+  .book__shipping-price {
+    font-family: inherit;
+    margin-top: 5px;
+  }
+
+  .book__price__text {
+    display: flex;
+    align-items: center;
+    font-size: 2.5rem;
+  }
+}
+
+.book__shipping-price {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 1rem;
+  @include rms(-1);
+  line-height: 1rem;
+  opacity: .7;
+}
+
+.book__cta {
+  margin-left: 2rem;
+}

@@ -2,29 +2,33 @@
    Layout / Header
    ======================= */
 
-// The '.headnav' class must be applied on the
-// element wrapping the header and the navigation
-.headnav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: $zIndex-headerMain;
-}
-
 .header-main {
   position: relative;
-  height: $header--main-height;
-  width: 100%;
   display: flex;
+  flex-flow: row wrap;
   align-items: center;
+  width: 100%;
   padding: 0 1rem;
   overflow: hidden;
   // This z-index has to be .dropdown-menu z-index + 1
   z-index: $zIndex-headerMain;
-  background-color: $black;
+  color: $grey-t;
   @include transition();
-  &.is-hidden {
-    transform: translateY(-100%);
+}
+
+.header-main__nav {
+  margin-left: auto;
+
+  &--secondary {
+    display: flex;
+    width: 100%;
+    height: 3rem;
+    border-top: 2px solid $grey-t;
+    color: $grey-t;
+
+    @include mq($from: 430px) {
+      display: none;
+    }
   }
 }
 
@@ -32,69 +36,93 @@
   display: flex;
   align-items: center;
   margin-left: auto;
-  height: $header--main-height;
+  height: 4rem;
+
+  &--secondary {
+    display: flex;
+    height: 100%;
+    width: 100%;
+  }
 }
+
 
 .header-main__menu__item {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
-  padding: 0 .5rem;
-  &:last-child {
-    padding-right: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+
+  &:not(:last-child) {
+    padding-right: 1rem;
+  }
+
+  .header-main__menu--secondary & {
+    width: 50%;
+    padding: initial;
   }
 }
 
-.header-main__link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  @include reset-link($white);
-  &:hover {
-    text-decoration: underline;
-  }
-}
-
-// On mobile we hide the subscription btn...
-.header-main__subscription-btn {
+.header-main__menu__item--secondary {
   display: none;
-  @include mq($from: tablet) {
+
+  @include mq($from: 430px) {
     display: flex;
   }
 }
 
-//... and we remove the padding right of the previous element
-.header-main__login-btn {
-  @include mq($from: mobile, $until: tablet) {
-    padding-right: 0;
-  }
-}
-
-.header-main__toggle-user-menu {
+.header-main__link {
   position: relative;
   display: flex;
-  flex-direction: row;
+  justify-content: center;
   align-items: center;
   height: 100%;
-  @include reset-link($white);
-  // & > i {
-  //     color: $white;
-  //     margin-left: .5rem;
-  //     @include transition();
-  // }
-  // & > i.is-active {
-  //     transform: rotate(180deg);
-  // }
-  .avatar {
-    margin-right: .5rem;
+  font-family: $Gotham-M;
+  text-transform: lowercase;
+  @include reset-link(inherit);
+  
+  &:hover {
+    @include mq($from: 430px) {
+      &::after {
+        transform: scaleX(1);
+      }
+    }
   }
-  .username {
-    display: none;
-    @include mq($from: tablet) {
-      display: inline-block;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    background-color: $grey-t;
+    display: block;
+    transform: scaleX(0);
+    transform-origin: left;
+    @include transition;
+    will-change: transform;
+  }
+
+  &--secondary {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    font-family: $Gotham-M;
+    text-transform: lowercase;
+    @include reset-link(inherit);
+    @include transition;
+
+    &:focus {
+      background-color: $grey-t;
+      color: $white;
     }
   }
 }
+
+
 

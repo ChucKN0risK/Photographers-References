@@ -5,453 +5,70 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Extoplus Styleguide</title>
+    <title>Photographers' References</title>
     <meta name="description" content="">
     <script src="assets/js/vendor/modernizr-2.8.3.min.js" type="text/javascript"></script>
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/styleguide.css">
-    <link href='https://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
 
-    <nav class="nav--fullscreen u-hide" id="portal-nav-fullscreen">
-        <ul class="nav--fullscreen__list">
-            <li class="nav--fullscreen__item close-nav">
-                <button class="btn--close" id="nav-fullscreen-closebtn">
-                </button>
+    <header class="header-main" role="header">
+        <div class="logo-container">
+            <a href="#" class="logo">Photographers' <br>References</a>
+            <span class="author"></span>
+        </div>
+        
+        <nav class="header-main__nav">
+            <ul class="header-main__menu u-list-reset">
+                <li class="header-main__menu__item header-main__menu__item--secondary">
+                    <a href="#" class="header-main__link">books</a>
+                </li>
+                <li class="header-main__menu__item header-main__menu__item--secondary">
+                    <a href="#" class="header-main__link">collection</a>
+                </li>
+                <li class="header-main__menu__item">
+                    <a href="#" class="header-main__link">cart</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <nav class="header-main__nav--secondary">
+        <ul class="header-main__menu--secondary u-list-reset">
+            <li class="header-main__menu__item">
+                <a href="#" class="header-main__link--secondary">books</a>
             </li>
-            <li class="nav--fullscreen__item is-active">
-                <a href="homepage-portail.html" class="nav--fullscreen__item__link">Accueil</a>
-            </li>
-            <li class="nav--fullscreen__item">
-                <a href="presentation-portail.html" class="nav--fullscreen__item__link">Présentation</a>
-            </li>
-            <li class="nav--fullscreen__item">
-                <a href="iconfont.html" class="nav--fullscreen__item__link">Icon Font</a>
-            </li>
-            <li class="nav--fullscreen__item">
-                <a href="#" class="nav--fullscreen__item__link">Equipes</a>
-            </li>
-            <li class="nav--fullscreen__item">
-                <a href="#" class="nav--fullscreen__item__link">Offres</a>
-            </li>
-            <li class="nav--fullscreen__item">
-                <a href="#" class="nav--fullscreen__item__link">Aide &amp; Contact</a>
+            <li class="header-main__menu__item">
+                <a href="#" class="header-main__link--secondary">collection</a>
             </li>
         </ul>
     </nav>
 
-    <div class="modal-wrapper js-modal-wrapper is-active u-hide" id="modal-wrapper">
-        <div class="modal js-modal modal--devis u-hide">
-            <main class="modal__content">
-                <h2>Me connecter</h2>
-
-                <p class="modal__text">Afin de pouvoir faire une demande de devis en ligne <br> ou d'accéder à votre espace personnel, <br>il est nécessaire de vous connecter.</p>
-
-                <form action="#" class="modal__form form--login">
-                    <div class="input-wrapper">
-                        <label for="input-text-example">Adresse email</label>
-                        <input title="Renseignez votre adresse email" type="text" id="input-text-example" placeholder="Adresse email">
-                    </div>
-
-                    <div class="input-wrapper">
-                        <label for="input-password-example">Mot de passe</label>
-                        <input title="Renseignez votre mot de passe" type="password" id="input-password-example" placeholder="Mot de passe">
-                    </div>
-
-                    <p class="error"></p>
-
-                    <button type="submit" class="btn btn--medium btn--full">
-                        <span class="btn__content">
-                            <span class="btn__text">Se connecter</span>
-                            <svg class="icon btn__icon">
-                                <use xlink:href="assets/icons/dest/icons.svg#arrow" />
-                            </svg>
-                        </span>
-                    </button>
-
-                    <a href="http://extoplus.fr/mot-de-passe-oublie/" class="password-forgotten">Mot de passe oublié ?</a>
-                </form>
-
-                <p class="no-account-text">Vous n'avez pas de compte ? <a href="http://extoplus.fr/creation-de-compte/">Créez votre univers</a></p>
-            </main>
-        </div>
-        <div class="modal js-modal modal--delete-kit u-hide">
-            <main class="modal__content">
-
-                <p class="modal__text">Confirmez-vous la suppression de cette configuration ?</p>
-
-                <div class="btn-wrapper">
-                    <button class="btn btn--medium btn--border btn--border-red js-modal-close">
-                       <span class="btn__content">
-                            <span class="btn__text">Annuler la suppression</span>
-                        </span> 
-                    </button>
-
-                    <button class="btn btn--medium btn--full js-delete-kit-btn">
-                        <span class="btn__content">
-                            <span class="btn__text">Supprimer cette configuration</span>
-                            <svg class="icon btn__icon">
-                                <use xlink:href="assets/icons/dest/icons.svg#delete-white" />
-                            </svg>
-                        </span>
-                    </button>
-                </div>
-
-            </main>
-        </div>
-        <div class="modal js-modal modal--help modal--help--pignons">
-            <button class="modal__close-btn js-modal-close">
-                <svg class="icon btn__icon">
-                    <use xlink:href="assets/icons/dest/icons.svg#close" />
-                </svg>
-            </button>
-
-            <main class="modal__content">
-                <h2>Nombre de pignons</h2>
-
-                <div class="modal__img">
-                    <img src="assets/img/etape-6.png" alt="Image aide">
-                </div>
-
-                <p class="modal__text modal__text--toiture">Le pignon reçoit la plus simple des charpentes : les poutres horizontales, les pannes, qui supportent les poutres de plus faible section posées dans la ligne de pente, les chevrons.</p>
-                
-                <p class="modal__text modal__text--pignons">Le pignon reçoit la plus simple des charpentes : les poutres horizontales, les pannes, qui supportent les poutres de plus faible section posées dans la ligne de pente, les chevrons.</p>
-
-                <p class="modal__text modal__text--pureau">Le pignon reçoit la plus simple des charpentes : les poutres horizontales, les pannes, qui supportent les poutres de plus faible section posées dans la ligne de pente, les chevrons.</p>
-
-                <p class="modal__text modal__text--rive-droite">La rive de toit est l’extrémité du toit côté pignon ; elle suit en général la ligne de plus grande pente et est alors qualifiée de rive droite. Une rive qui n’est pas droite est appelée rive biaise ; si elle n’est pas en saillie, elle présente une avancée plus importante en haut qu’en bas, selon la région et l’architecture ; si au contraire elle est en saillie, elle peut être soit sortante (cas le plus fréquent), soit rentrante.</p>
-
-                <p class="modal__text modal__text--rive-gauche">La rive de toit est l’extrémité du toit côté pignon ; elle suit en général la ligne de plus grande pente et est alors qualifiée de rive droite. Une rive qui n’est pas droite est appelée rive biaise ; si elle n’est pas en saillie, elle présente une avancée plus importante en haut qu’en bas, selon la région et l’architecture ; si au contraire elle est en saillie, elle peut être soit sortante (cas le plus fréquent), soit rentrante.</p>
-
-                <p class="modal__text modal__text--versant">Partie d’un toit généralement de surface plane triangulaire, carrée, rectangulaire, trapézoïdale, limitée au minimum sur trois cotés, souvent quatre et parfois davantage, par une ou plusieurs lignes de couverture : égout, rive latérale, rive de tête, faîtage, arêtier, noue. Le nombre de versants définit différentes formes de toits : toit à un, deux, trois, quatre versants, etc. couverture.</p>
-            </main>
-        </div>
-    </div>
-
-    <div class="headnav">
-
-        <header class="header-main" data-ui-component="Header" id="header-main">
-
-            <a href="#" class="logo logo--header"></a>
+    <main>
+        <section class="content-section">
             
-            <nav class="header-main__nav">
-                <ul class="header-main__menu u-list-reset">
-                    <li class="header-main__menu__item">
-                        <a href="#" class="header-main__link">Le système</a>
-                    </li>
-                    <li class="header-main__menu__item">
-                        <a href="#" class="header-main__link">La mise en oeuvre</a>
-                    </li>
-                    <li class="header-main__menu__item">
-                        <a href="#" class="header-main__link">Centres de formation</a>
-                    </li>
-                    <li class="header-main__menu__item">
-                        <a href="#" class="header-main__link" id="open-header-main-dropdown">Contact</a>
-                    </li>
-                    <li class="header-main__menu__item">
-                        <a href="#" class="header-main__link" id="header-main-user-login-toggle">Mon compte</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-    </div>
-
-    <main class="styleguide">
-        <h1 class="styleguide__title">Styleguide</h1>
-        
-        <!-- BUTTONS -->
-        <section class="styleguide__section">
-            <h2 class="styleguide__section__title">Buttons</h2>
-
-            <div class="styleguide__section__item styleguide__section__item--buttons">
-                <button class="btn btn--skew btn--medium btn--red">
-                    <span class="btn__content">
-                        <svg class="icon icon--left btn__icon">
-                            <use xlink:href="assets/icons/dest/icons.svg#commander" />
-                        </svg>
-                        <span class="btn__text">Panier</span>
-                    </span>
-                </button>
-
-                <a href="#" class="btn btn--skew btn--medium btn--grey">
-                    <span class="btn__content">
-                        <svg class="icon icon--left btn__icon">
-                            <use xlink:href="assets/icons/dest/icons.svg#modularite" />
-                        </svg>
-                        <span class="btn__text">Chiffrer</span>
-                    </span>
-                </a>
-
-                <a href="#" class="btn btn--medium btn--full">
-                    <span class="btn__content">
-                        <span class="btn__text">Commander</span>
-                        <svg class="icon btn__icon">
-                            <use xlink:href="assets/icons/dest/icons.svg#commander" />
-                        </svg>
-                    </span>
-                </a>
-
-                <button class="btn btn--medium btn--full">
-                    <span class="btn__content">
-                        <span class="btn__text">Commander</span>
-                        <svg class="icon btn__icon">
-                            <use xlink:href="assets/icons/dest/icons.svg#commander" />
-                        </svg>
-                    </span>
-                </button>
-                
-                <a href="#" class="btn btn--medium btn--full">
-                    <span class="btn__content">
-                        <span class="btn__text">En savoir plus</span>
-                        <svg class="icon btn__icon">
-                            <use xlink:href="assets/icons/dest/icons.svg#arrow" />
-                        </svg>
-                    </span>
-                </a>
-
-                <button class="btn btn--medium btn--border btn--border-red">
-                   <span class="btn__content">
-                        <svg class="icon icon--left btn__icon">
-                            <use xlink:href="assets/icons/dest/icons.svg#add" />
-                        </svg>
-                        <span class="btn__text">Ajouter une autre rive</span>
-                    </span> 
-                </button>
-
-                <button class="btn btn--medium">
-                   <span class="btn__content">
-                        <svg class="icon icon--left btn__icon">
-                            <use xlink:href="assets/icons/dest/icons.svg#add" />
-                        </svg>
-                        <span class="btn__text">Ajouter une autre rive</span>
-                    </span> 
-                </button>
-            </div>
         </section>
-        
-        <!-- ICONS -->
-        <section class="styleguide__section">
-            <h2 class="styleguide__section__title">Icons</h2>
 
-            <div class="styleguide__section__item styleguide__section__item--spaced styleguide__section__item--icons">
-                <div class="icon-wrapper" title="esthetisme">
-                    <svg class="icon">
-                        <use xlink:href="assets/icons/dest/icons.svg#slide-down" />
-                    </svg>
-                </div>
-                <div class="icon-wrapper" title="adaptable">
-                    <svg class="icon">
-                        <use xlink:href="assets/icons/dest/icons.svg#adaptable" />
-                    </svg>
-                </div>
-                <div class="icon-wrapper" title="intuitif">
-                    <svg class="icon">
-                        <use xlink:href="assets/icons/dest/icons.svg#intuitif" />
-                    </svg>
-                </div>
-                <div class="icon-wrapper icon-wrapper--squared" title="esthetisme">
-                    <svg class="icon">
-                        <use xlink:href="assets/icons/dest/icons.svg#esthetisme" />
-                    </svg>
-                </div>
-                <div class="icon-wrapper icon-wrapper--squared" title="adaptable">
-                    <svg class="icon">
-                        <use xlink:href="assets/icons/dest/icons.svg#adaptable" />
-                    </svg>
-                </div>
-                <div class="icon-wrapper icon-wrapper--squared" title="intuitif">
-                    <svg class="icon">
-                        <use xlink:href="assets/icons/dest/icons.svg#intuitif" />
-                    </svg>
-                </div>
-            </div>
+        <section class="content-section">
+            
         </section>
-        
-        <!-- TYPOGRAPHY -->
-        <section class="styleguide__section">
-            <h2 class="styleguide__section__title">Typography</h2>
 
-            <div class="styleguide__section__item styleguide__section__item--typography">
-                <div class="headings u-hide">
-                    <h1>h1 - Gérez comme un pro votre équipe de sport amateur</h1>
-                    <h2>h2 - Coachs gagnez du temps</h2>
-                    <h3>h3 - Coachs gagnez du temps</h3>
-                    <h4>h4 - Coachs gagnez du temps</h4>
-                    <h5>h5 - Coachs gagnez du temps</h5>
-                </div>
-
-                <div class="text-wrapper">
-                    <h1>Gérez comme un pro votre équipe de sport amateur</h1>
-                    <p class="text-subtitle">Gérez comme un pro votre équipe de sport amateur</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adip<span style="color: red;">i</span>sicing elit. Ip<span style="color: red;">s</span>am dicta dignissimos tempora aperiam assumenda? Voluptatum accusamus voluptate expedita optio, libero porro praesentium numquam iusto, sit repellendus eaque est assumenda illo delectus nobis vero! Quibusdam nam at temporibus quidem est, consequatur laudantium, delectus culpa dolorum, nemo deserunt et dolorem iure quisquam. Aspernatur obcaecati magni labore sunt laboriosam molestiae dolor animi error quae eius, voluptas assumenda cupiditate, facere reprehenderit, doloremque corporis mollitia.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint odio dolores explicabo optio excepturi, eveniet dolorum beatae, doloribus similique a, nobis fugit consectetur! Veniam nemo, itaque incidunt consequatur. Quisquam ratione odit repellendus temporibus sed ducimus cumque incidunt nam impedit maxime voluptates laboriosam nesciunt rerum, vero ipsam ipsa, et repellat, ad.</p>
-                </div>
-
-                <div class="text-wrapper">
-                    <h2>Gérez comme un pro votre équipe de sport amateur</h2>
-                    <p class="text-subtitle">Gérez comme un pro votre équipe de sport amateur</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam dicta dignissimos tempora aperiam assumenda? Voluptatum accusamus voluptate expedita optio, libero porro praesentium numquam iusto, sit repellendus eaque est assumenda illo delectus nobis vero! Quibusdam nam at temporibus quidem est, consequatur laudantium, delectus culpa dolorum, nemo deserunt et dolorem iure quisquam. Aspernatur obcaecati magni labore sunt laboriosam molestiae dolor animi error quae eius, voluptas assumenda cupiditate, facere reprehenderit, doloremque corporis mollitia.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint odio dolores explicabo optio excepturi, eveniet dolorum beatae, doloribus similique a, nobis fugit consectetur! Veniam nemo, itaque incidunt consequatur. Quisquam ratione odit repellendus temporibus sed ducimus cumque incidunt nam impedit maxime voluptates laboriosam nesciunt rerum, vero ipsam ipsa, et repellat, ad.</p>
-                </div>
-
-                <div class="text-wrapper">
-                    <h3>Gérez comme un pro votre équipe de sport amateur</h3>
-                    <p class="text-subtitle">Gérez comme un pro votre équipe de sport amateur</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam dicta dignissimos tempora aperiam assumenda? Voluptatum accusamus voluptate expedita optio, libero porro praesentium numquam iusto, sit repellendus eaque est assumenda illo delectus nobis vero! Quibusdam nam at temporibus quidem est, consequatur laudantium, delectus culpa dolorum, nemo deserunt et dolorem iure quisquam. Aspernatur obcaecati magni labore sunt laboriosam molestiae dolor animi error quae eius, voluptas assumenda cupiditate, facere reprehenderit, doloremque corporis mollitia.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint odio dolores explicabo optio excepturi, eveniet dolorum beatae, doloribus similique a, nobis fugit consectetur! Veniam nemo, itaque incidunt consequatur. Quisquam ratione odit repellendus temporibus sed ducimus cumque incidunt nam impedit maxime voluptates laboriosam nesciunt rerum, vero ipsam ipsa, et repellat, ad.</p>
-                </div>
-
-                <div class="text-wrapper">
-                    <h4>Gérez comme un pro votre équipe de sport amateur</h4>
-                    <p class="text-subtitle">Gérez comme un pro votre équipe de sport amateur</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam dicta dignissimos tempora aperiam assumenda? Voluptatum accusamus voluptate expedita optio, libero porro praesentium numquam iusto, sit repellendus eaque est assumenda illo delectus nobis vero! Quibusdam nam at temporibus quidem est, consequatur laudantium, delectus culpa dolorum, nemo deserunt et dolorem iure quisquam. Aspernatur obcaecati magni labore sunt laboriosam molestiae dolor animi error quae eius, voluptas assumenda cupiditate, facere reprehenderit, doloremque corporis mollitia.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint odio dolores explicabo optio excepturi, eveniet dolorum beatae, doloribus similique a, nobis fugit consectetur! Veniam nemo, itaque incidunt consequatur. Quisquam ratione odit repellendus temporibus sed ducimus cumque incidunt nam impedit maxime voluptates laboriosam nesciunt rerum, vero ipsam ipsa, et repellat, ad.</p>
-                </div>
-
-                <div class="text-wrapper text-wrapper--thin">
-                    <h3>Lorem ipsum dolor sit amet</h3>
-                    <p class="text-subtitle">Gérez comme un pro votre équipe de sport amateur</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam et culpa id perferendis non illo vero quasi, eius minima quidem natus nemo sed voluptatum deleniti laudantium eveniet debitis, laborum dicta unde enim. Quasi sit blanditiis, maiores, adipisci qui at rem.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos distinctio, quo. Molestiae delectus minus at odio ullam perferendis dignissimos esse.</p>
-                </div>
-
-                <div class="lists">
-                    <div class="list-wrapper">
-                        <h5 class="text-subtitle">Default List</h5>
-                        <ul class="u-list-default">
-                            <li>My Item</li>
-                            <li>My Item</li>
-                            <li>My Item</li>
-                            <li>My Item</li>
-                        </ul>
-                    </div>
-                    <div class="list-wrapper">
-                        <h5 class="text-subtitle">Reset List</h5>
-                        <ul class="u-list-reset">
-                            <li>My Item</li>
-                            <li>My Item</li>
-                            <li>My Item</li>
-                            <li>My Item</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="links">
-                    <h5 class="text-subtitle">Links</h5>
-
-                    <a href="#">Inscrire son équipe</a>
-
-                    <a href="#" class="link--icon">
-                        <svg class="icon">
-                            <use xlink:href="assets/icons/dest/icons.svg#telephone" />
-                        </svg>
-                        0164707787
-                    </a>
-
-                    <a href="#" class="link--icon">
-                        <svg class="icon">
-                            <use xlink:href="assets/icons/dest/icons.svg#email" />
-                        </svg>
-                        extoplus@gmail.com
-                    </a>
-
-                    <a href="#" class="link--icon-rtl">
-                        Découvrir cette équipe
-                    </a>
-                </div>
-            </div>
-        </section>
-        
-        <!-- TESTIMONIES -->
-        <section class="styleguide__section">
-            <h2 class="styleguide__section__title">Testimonies</h2>
-
-            <div class="styleguide__section__item styleguide__section__item--spaced">
-                <div class="testimonies-wrapper">
-                    <div class="media media--testimony">
-                        <div class="media__figure">
-                            <div class="avatar--large">
-                                <img src="assets/img/avatar.jpg" alt="user_image">
-                            </div>
-                        </div>
-                        <div class="media__body">
-                            <blockquote class="user__testimony">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia libero, sunt eveniet suscipit consequuntur cupiditate! Mollitia, quidem, labore.</blockquote>
-                            <p class="user__name">Jérémie Moritz</p>
-                        </div>
-                    </div>
-                    <div class="media media--testimony">
-                        <div class="media__figure">
-                            <div class="avatar--large">
-                                <img src="assets/img/avatar.jpg" alt="user_image">
-                            </div>
-                        </div>
-                        <div class="media__body">
-                            <blockquote class="user__testimony">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia libero, sunt eveniet suscipit consequuntur cupiditate! Mollitia, quidem, labore.</blockquote>
-                            <p class="user__name">Jérémie Moritz</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="glide u-hide" id="user-tesmimonies">
-                    <div class="glide__arrows">
-                        <span class="glide__arrow prev" data-glide-dir="<">
-                        <span class="glide__arrow next" datspan>
-                    </div>
-
-                    <div class="glide__wrapper">
-                        <ul class="glide__track">
-                            <li class="glide__slide">
-                                <div class="media media--testimony">
-                                    <div class="media__figure">
-                                        <div class="avatar--medium">
-                                            <img src="assets/img/avatar.jpg" alt="user_image">
-                                        </div>
-                                    </div>
-                                    <div class="media__body">
-                                        <p class="user__name">Jérémie Moritz</p>
-                                        <blockquote class="user__testimony">SportEasy me fait gagner au moins 2 heures par semaine, entre les envois de mails automatiques pour savoir si mes gars sont dispos et la convocation en 1 clic. Et puis, le site est hyper intuitif. Bravo !</blockquote>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="glide__slide">
-                                <div class="media media--testimony">
-                                    <div class="media__figure">
-                                        <div class="avatar--medium">
-                                            <img src="assets/img/avatar.jpg" alt="user_image">
-                                        </div>
-                                    </div>
-                                    <div class="media__body">
-                                        <p class="user__name">Clément Laurent</p>
-                                        <blockquote class="user__testimony">C'est génial de pouvoir garder une trace de nos buteurs et voter pour l'homme du match. Et depuis qu'il y a l'appli mobile, on vote directement depuis le vestiaire ! Idéal pour la gestion d'une équipe de foot...</blockquote>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="glide__slide">
-                                <div class="media media--testimony">
-                                    <div class="media__figure">
-                                        <div class="avatar--medium">
-                                            <img src="assets/img/avatar.jpg" alt="user_image">
-                                        </div>
-                                    </div>
-                                    <div class="media__body">
-                                        <p class="user__name">François Scheefer</p>
-                                        <blockquote class="user__testimony">Ça me permet de suivre toutes les stats de mes joueuses: buts, passes décisives, cartons... Dans 10 ans, on aura les stats sur plusieurs générations.</blockquote>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <ul class="glide__bullets"></ul>
-                </div>
-            </div>
+        <section class="content-section">
+            
         </section>
     </main>
+
+    <footer class="footer-main">
+        <div class="logo-container">
+            <a href="#" class="logo">Photographers' <br>References</a>
+        </div>
+
+        <p class="copyrights">&copy; <script type="text/javascript">document.write(new Date().getFullYear());</script> Photographers' References.<br> All rights reserved</p>
+    </footer>
     
     <script src="assets/js/vendor/typerendering-1.1.0.min.js" defer></script>
-    <script src="assets/js/build/all.js"></script>
+    <!-- <script src="assets/js/build/all.js"></script> -->
 </body>
 
 </html>

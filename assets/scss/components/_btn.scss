@@ -43,7 +43,6 @@
   font-size: ms(0);
   text-align: center;
   text-decoration: none;
-  @include border-radius;
   @include transition;
   backface-visibility: hidden;
   border: 1px solid transparent;
@@ -161,26 +160,5 @@
 
   .btn__text {
     margin-right: .3rem;
-  }
-}
-
-@each $social-network,
-$social-color in $social-colors {
-  .icon-#{$social-network}-with-circle {
-    color: $social-color;
-  }
-  .btn--#{$social-network} {
-    background-color: $social-color;
-    color: $white;
-    font-weight: 200;
-  }
-}
-
-.btn--facebook {
-  @include reset-link($white);
-  height: $input-height;
-  @include mq($from: desktop) {
-    padding-right: 1rem;
-    padding-left: 1rem;
   }
 }

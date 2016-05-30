@@ -34,7 +34,7 @@ html {
   /* [3] */
   // Mobile First Approach
   // Refer to https://prowebtype.com/setting-type/
-  font-family: $font1, serif;
+  font-family: $Time, serif;
   font-size: 100%;
   // line-height: 1.6;
   font-weight: 400;
@@ -114,7 +114,7 @@ a,
 ul,
 blockquote,
 figcaption {
-  font-family: $font1;
+  font-family: $Time;
 }
 
 img {

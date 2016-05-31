@@ -25,22 +25,25 @@
 // document.querySelector('.el').previousElementSibling;
 // document.querySelector('.el').nextElementSibling;
 
-// $(function(){
+$(function(){
     console.info('main.js Loaded');
-// });
 
-// IMG Slider
-$("#Glide").glide({
-    type: "carousel"
+    // IMG Slider
+    $("#book-images").glide({
+        type: "carousel",
+        hoverpause: "true",
+        keyboard: "true"
+    });
+
+    // Book Selector
+    $('.js-modal-selector').on('click', function(e){
+        saveStateCommand = unsaveCommande;
+        unsaveCommande = false;
+        modalWrapper.open();
+        var modalSelector = $(this).data('modal');
+        console.log('help ' + modalSelector);
+        $(modal).addClass('u-hide');
+        $('#' + modalSelector).removeClass('u-hide');
+    });
 });
 
-// Book Selector
-$('.js-modal-selector').on('click', function(e){
-    saveStateCommand = unsaveCommande;
-    unsaveCommande = false;
-    modalWrapper.open();
-    var modalSelector = $(this).data('modal');
-    console.log('help ' + modalSelector);
-    $(modal).addClass('u-hide');
-    $('#' + modalSelector).removeClass('u-hide');
-});

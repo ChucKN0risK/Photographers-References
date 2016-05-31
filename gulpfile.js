@@ -26,6 +26,7 @@ var path = {
   js: [
     './assets/js/vendor/modernizr-2.8.3.min.js',
     './assets/js/vendor/typerendering-1.1.0.min.js',
+    './assets/js/vendor/glide.min.js',
     './assets/js/main.js'
   ],
   img: './assets/img/*',
@@ -67,9 +68,6 @@ gulp.task('sass', function () {
     .pipe(sourcemaps.init())
     .pipe(sass({
       onError: console.error.bind(console, 'SASS error')
-    }))
-    .pipe(uncss({
-        html: ['index.html']
     }))
     .pipe(autoprefixer(autoprefixerOptions))
     .pipe(sourcemaps.write())
@@ -147,46 +145,45 @@ gulp.task('svgstore', function () {
 });
 
 // Generate & Inline Critical-path CSS
-gulp.task('critical', function () {
-  return gulp
-    .src(path.html)
-    .pipe(critical({
-      base: './',
-      inline: true,
-      minify: true,
-      dimensions: [{
-        height: 1300,
-        width: 900
-      }]
-    }))
-    .pipe(gulp.dest(path.dist));
-});
+// gulp.task('critical', function () {
+//   return gulp
+//     .src(path.html)
+//     .pipe(critical({
+//       base: './',
+//       inline: true,
+//       minify: true,
+//       dimensions: [{
+//         height: 1300,
+//         width: 900
+//       }]
+//     }))
+//     .pipe(gulp.dest(path.dist));
+// });
 
 // Run a Google Page Speed Insight Test for mobile
-gulp.task('mobile', function () {
-    return psi(site, {
-        // key: key
-        nokey: 'true',
-        strategy: 'mobile',
-    }, function (err, data) {
-        console.log(data.score);
-        console.log(data.pageStats);
-    });
-});
+// gulp.task('mobile', function () {
+//     return psi(site, {
+//         // key: key
+//         nokey: 'true',
+//         strategy: 'mobile',
+//     }, function (err, data) {
+//         console.log(data.score);
+//         console.log(data.pageStats);
+//     });
+// });
 
 // Run a Google Page Speed Insight Test for desktop
-gulp.task('desktop', function () {
-    return psi(site, {
-        nokey: 'true',
-        // key: key,
-        strategy: 'desktop',
-    }, function (err, data) {
-        console.log(data.score);
-        console.log(data.pageStats);
-    });
-});
+// gulp.task('desktop', function () {
+//     return psi(site, {
+//         nokey: 'true',
+//         // key: key,
+//         strategy: 'desktop',
+//     }, function (err, data) {
+//         console.log(data.score);
+//         console.log(data.pageStats);
+//     });
+// });
 
-gulp.task('default', ['sass','serve'], function () {});
-
+gulp.task('default', ['sass', 'js-dev', 'serve']);
 gulp.task('prod', ['sass-prod', 'js-prod', 'critical', 'img']);
 

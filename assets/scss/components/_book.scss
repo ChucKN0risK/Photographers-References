@@ -73,14 +73,19 @@
   width: 100%;
 }
 
+.book__img-wrapper {
+  height: auto;
+  margin-bottom: 2rem;
+}
+
 .book__img {
   display: flex;
   height: 20rem;
   width: 100%;
 
   img {
-    height: 100%;
-    width: auto;
+    // height: 100%;
+    // width: auto;
     margin: auto;
   }
 }

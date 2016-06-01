@@ -1,5 +1,6 @@
 preprod:
     host: ftp.cluster013.ovh.net
+    scheme: ftp
     user: louische
     pass: OqN8PDGr0bvzmtjG4
     path:

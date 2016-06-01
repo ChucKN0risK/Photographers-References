@@ -1,9 +1,3 @@
-AuthName "Page d'administration protégée"
-AuthType Basic
-AuthUserFile "/home/louische/www/preprod/Photographers-References/.htpasswd"
-Require valid-user
-
-
 # Apache Server Configs v2.14.0 | MIT License
 # https://github.com/h5bp/server-configs-apache
 

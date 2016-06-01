@@ -2,7 +2,10 @@
 // == Text Wrapper
 // ----------------------
 .text-wrapper {
-  max-width: 35rem;
+  width: 100%;
+  @include mq($from: tablet) {
+    max-width: 30rem;
+  }
 
   &:not(:last-child) {
     margin-bottom: 2rem;

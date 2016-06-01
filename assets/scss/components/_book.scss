@@ -70,17 +70,31 @@
 }
 
 .book__content {
+  display: flex;
+  flex-flow: row wrap;
   width: 100%;
+
+  @include mq($from: tablet) {
+    .book__img-wrapper {
+      margin-bottom: initial;
+      margin-right: 2rem;
+      max-width: calc(100% - 27rem);
+    }
+    .book__infos {
+      max-width: 25rem;
+    }
+  }
 }
 
 .book__img-wrapper {
+  width: 100%;
   height: auto;
   margin-bottom: 2rem;
 }
 
 .book__img {
-  display: flex;
-  height: 20rem;
+  // display: flex;
+  // height: 20rem;
   width: 100%;
 
   img {
@@ -125,5 +139,5 @@
 }
 
 .book__cta {
-  margin-left: 2rem;
+  margin-left: auto;
 }

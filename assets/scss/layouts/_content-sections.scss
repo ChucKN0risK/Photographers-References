@@ -12,13 +12,6 @@ section {
   @include mq($from: tablet) {
     flex-direction: row;
     align-items: flex-start;
-    @include padding-tablet;
-  }
-  @include mq($from: desktop) {
-    @include padding-desktop;
-  }
-  @include mq($from: wide) {
-    @include padding-wide;
   }
 }
 
@@ -58,12 +51,16 @@ section {
   }
 }
 
-.section__content {
+.section__content-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
   width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 
   @include mq($from: tablet) {
-    max-width: 25rem;
-    margin-left: auto;
+    padding: 3rem 0;
   }
 }
 

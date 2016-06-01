@@ -64,9 +64,6 @@
 .book {
   display: flex;
   flex-flow: row wrap;
-  .video {
-    width: 100%;
-  }
 }
 
 .book__content {
@@ -88,7 +85,9 @@
 
 .book__img-wrapper {
   width: 100%;
-  height: auto;
+  max-width: 35rem;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 2rem;
 }
 
@@ -140,4 +139,11 @@
 
 .book__cta {
   margin-left: auto;
+}
+
+.book__video {
+  width: 100%;
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
 }

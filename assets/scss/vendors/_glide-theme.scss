@@ -3,9 +3,13 @@
 }
 
 .glide--horizontal .glide__arrows {
-  top: 50%;
-  width: 92%;
-  margin-left: 4%;
+  position: relative;
+  height: 2rem;
+  width: 60%;
+  max-width: 15rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
 }
 
 .glide--vertical .glide__arrows {
@@ -32,10 +36,10 @@
   border-color: $grey;
 }
 
-.glide--horizontal .glide__arrow {
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-}
+// .glide--horizontal .glide__arrow {
+//   -webkit-transform: translateY(-50%);
+//           transform: translateY(-50%);
+// }
 
 .glide--horizontal .glide__arrow.prev {
   left: 0;

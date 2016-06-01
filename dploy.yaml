@@ -1,0 +1,8 @@
+preprod:
+    host: ftp.cluster013.ovh.net
+    user: louische
+    pass: OqN8PDGr0bvzmtjG4
+    path:
+        local: dev/
+        remote: preprod/Photographers-References
+    exclude: ["dploy.yaml", "package.json", "README.md", "gulpfile.js", ".gitignore"]

@@ -30,6 +30,10 @@ sassdoc/
 ################################################
 npm-debug.log
 
+# FTP Config 
+################################################
+/dploy.yaml
+
 # Local Development Configuration
 ################################################
 localconfig.json

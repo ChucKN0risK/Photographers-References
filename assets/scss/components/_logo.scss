@@ -3,6 +3,10 @@
    ======================= */
 
 .logo-container {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+
   .header-main & {
     color: $grey-t;
   }
@@ -16,6 +20,13 @@
   color: inherit;
   font-family: $Gotham-B;
   text-decoration: none;
+  text-transform: uppercase;
+}
+
+.author {
+  margin-top: 1rem;
+  color: inherit;
+  font-family: $Gotham-B;
   text-transform: uppercase;
 }
 

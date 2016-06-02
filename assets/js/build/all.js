@@ -947,6 +947,7 @@ $(function(){
             this.$booksThumbsWrapper.removeClass('u-hide');
             this.$wrapper.addClass('u-hide');
             this.$el.siblings().removeClass('u-hide');
+            $('.js-book-author').text('');
             this.isShown = false;
             console.log('close');
         },
@@ -961,6 +962,7 @@ $(function(){
 
     $('.js-book-selector').click(function(){
         new Book($('#' + $(this).data('book')));
+        $('.js-book-author').text($(this).data('author'));
     });
 });
 

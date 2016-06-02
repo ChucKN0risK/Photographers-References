@@ -66,8 +66,7 @@ $(function(){
         this.$booksThumbsWrapper = $('.books-thumbs-wrapper');
         this.$wrapper = $('.js-books-wrapper');
         this.$toggler = this.$el.find('.js-book-toggler');
-        this.$slider = this.$el.find('.js-book-slider').glide();
-        // this.$slider_api = this.$slider.data('glide_api');
+        this.$slider = this.$el.find('.js-book-slider');
         this.isShown = false;
         this.toggle();
         this.events();
@@ -94,7 +93,7 @@ $(function(){
         open: function(transition) {
             this.$booksThumbsWrapper.addClass('u-hide');
             this.$wrapper.removeClass('u-hide');
-            this.$el.removeClass('u-hide');
+            this.$el.siblings().addClass('u-hide');
             this.initSlider();
             this.isShown = true;
             console.log('open');
@@ -102,7 +101,7 @@ $(function(){
         close: function(transition) {
             this.$booksThumbsWrapper.removeClass('u-hide');
             this.$wrapper.addClass('u-hide');
-            this.$el.addClass('u-hide');
+            this.$el.siblings().removeClass('u-hide');
             this.isShown = false;
             console.log('close');
         },

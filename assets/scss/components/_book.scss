@@ -16,8 +16,10 @@
   width: 100%;
   cursor: pointer;
 
-  &:not(:last-child) {
-    margin-bottom: 2rem;
+  @include mq($until: tablet) {
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
   }
 
   @include mq($from: tablet) {

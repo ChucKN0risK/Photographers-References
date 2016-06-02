@@ -870,25 +870,98 @@ if(1===q.a){var y;if(2===q.e)y=k(q.f,new e(37))&&k(q.d,new e(6,1))?"directwrite"
 // document.querySelector('.el').previousElementSibling;
 // document.querySelector('.el').nextElementSibling;
 
+// Pour chaque auteur :
+// 1) Cacher le books-thumbs-wrapper
+// 2) Afficher le books-wrapper et le book correspondant à l'auteur
+// 3) Lancer le slider propre au book
+// 4) Générer le nom en dessous du logo
+
+// Créer une class Book qui aura : 
+// Un toggler : le book-thumb associé via un data attribute
+// Un slider
+// Un description idéalement contenue dans un JSON à part
+
+
+
+// // Initi IMG Slider
+// $("#book-images").glide({
+//     type: "carousel",
+//     hoverpause: "true",
+//     keyboard: "true"
+// });
+
+// // Book Selector
+// $('.js-book-selector').on('click', function(e){
+//     modalWrapper.open();
+//     var modalSelector = $(this).data('modal');
+//     console.log('help ' + modalSelector);
+//     $(modal).addClass('u-hide');
+//     $('#' + modalSelector).removeClass('u-hide');
+// });
+
 $(function(){
     console.info('main.js Loaded');
 
-    // IMG Slider
-    $("#book-images").glide({
-        type: "carousel",
-        hoverpause: "true",
-        keyboard: "true"
-    });
+    // -------------------
+    // Book
+    // -------------------
 
-    // Book Selector
-    $('.js-modal-selector').on('click', function(e){
-        saveStateCommand = unsaveCommande;
-        unsaveCommande = false;
-        modalWrapper.open();
-        var modalSelector = $(this).data('modal');
-        console.log('help ' + modalSelector);
-        $(modal).addClass('u-hide');
-        $('#' + modalSelector).removeClass('u-hide');
+    var Book = function($el) {
+        this.$el = $el;
+        this.$booksThumbsWrapper = $('.books-thumbs-wrapper');
+        this.$wrapper = $('.js-books-wrapper');
+        this.$toggler = this.$el.find('.js-book-toggler');
+        this.$slider = this.$el.find('.js-book-slider').glide();
+        // this.$slider_api = this.$slider.data('glide_api');
+        this.isShown = false;
+        this.toggle();
+        this.events();
+
+        return Book;
+    };
+
+    Book.prototype = {
+        events: function() {
+            var _this = this;
+
+            $('.js-books-thumbs-toggler').on('click', function() {
+                _this.toggle();
+                _this.$booksThumbsWrapper.removeClass('u-hide');
+            });
+        },
+        toggle: function() {
+            if (this.isShown) {
+                this.close();
+            } else {
+                this.open();
+            }
+        },
+        open: function(transition) {
+            this.$booksThumbsWrapper.addClass('u-hide');
+            this.$wrapper.removeClass('u-hide');
+            this.$el.removeClass('u-hide');
+            this.initSlider();
+            this.isShown = true;
+            console.log('open');
+        },
+        close: function(transition) {
+            this.$booksThumbsWrapper.removeClass('u-hide');
+            this.$wrapper.addClass('u-hide');
+            this.$el.addClass('u-hide');
+            this.isShown = false;
+            console.log('close');
+        },
+        initSlider: function() {
+            this.$slider.glide({
+                type: "carousel",
+                hoverpause: "true",
+                keyboard: "true"
+            });
+        }
+    };
+
+    $('.js-book-selector').click(function(){
+        new Book($('#' + $(this).data('book')));
     });
 });
 

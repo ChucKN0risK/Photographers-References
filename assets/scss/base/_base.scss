@@ -66,6 +66,11 @@ $ms-base: 1rem 1.25rem;
 body {
   @include rms(0); // 1rem
   position: relative;
+  padding-top: 5rem;
+
+  @include mq($from: tablet) {
+    padding-top: 7rem;
+  }
 }
 
 h1,

@@ -24,7 +24,6 @@ var sassdoc          = require('sassdoc');
 var path = {
   sass: './assets/scss/**/*.scss',
   js: [
-    './assets/js/vendor/modernizr-2.8.3.min.js',
     './assets/js/vendor/typerendering-1.1.0.min.js',
     './assets/js/vendor/glide.min.js',
     './assets/js/main.js'

@@ -5,10 +5,10 @@
 .logo-container {
   display: flex;
   flex-direction: column;
-  padding: 1rem 0;
 
   .header-main & {
     color: $grey-t;
+    padding: 1rem 0;
   }
   
   .footer-main & {
@@ -26,7 +26,7 @@
 
 .author {
   color: inherit;
-  font-family: $Gotham-B;
+  font-family: $Gotham-M;
   text-transform: uppercase;
   opacity: .7;
 }

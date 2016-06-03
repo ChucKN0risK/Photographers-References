@@ -34,7 +34,7 @@ $(function(){
             var _this = this;
 
             $('.js-books-thumbs-toggler').on('click', function() {
-                _this.toggle();
+                _this.close();
                 _this.$booksThumbsWrapper.removeClass('u-hide');
             });
         },

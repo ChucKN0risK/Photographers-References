@@ -94,7 +94,7 @@
   position: relative;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   height: 100%;
   font-family: $Gotham-M;
   text-transform: lowercase;
@@ -111,9 +111,9 @@
   &::after {
     content: '';
     position: absolute;
-    bottom: 15px;
+    bottom: 35px;
     left: 0;
-    height: 4px;
+    height: 2px;
     width: 100%;
     background-color: $grey-t;
     display: block;

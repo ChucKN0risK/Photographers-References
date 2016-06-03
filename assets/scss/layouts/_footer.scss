@@ -31,6 +31,7 @@
     @include mq($from: tablet) {
       margin-top: initial;
       margin-left: auto;
+      line-height: 1;
       br { display: none; }
     }
   }

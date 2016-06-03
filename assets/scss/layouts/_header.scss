@@ -16,7 +16,9 @@
   z-index: $zIndex-headerMain;
 
   @include mq($from: tablet) {
-    height: 7rem;
+    body.book-selected & {
+      height: 7rem;
+    }
   }
 }
 

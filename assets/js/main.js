@@ -40,6 +40,7 @@ $(function(){
             console.log('open');
         },
         close: function(transition) {
+            $('body').removeClass('book-selected');
             this.$booksThumbsWrapper.removeClass('u-hide');
             this.$wrapper.addClass('u-hide');
             this.$el.siblings().removeClass('u-hide');

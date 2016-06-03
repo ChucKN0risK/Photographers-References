@@ -115,6 +115,14 @@
   margin-bottom: 2rem;
 }
 
+.book__title {
+  @include rms(3);
+  margin-bottom: 1rem;
+  font-family: $Gotham-M;
+  text-transform: uppercase;
+  color: $grey-t;
+}
+
 .book__price {
   display: flex;
   margin-top: 1rem;

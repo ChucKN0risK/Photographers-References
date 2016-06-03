@@ -23,7 +23,7 @@
 .header-main__content {
   display: flex;
   flex-flow: row wrap;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
   color: $grey-t;
   @include transition();
@@ -35,14 +35,18 @@
 
 .header-main__nav {
   margin-left: auto;
+  margin-top: calc(1rem - 3px);
 
   &--secondary {
+    position: fixed;
+    top: 5rem;
     display: flex;
     width: 100%;
     height: 3rem;
     border-top: 2px solid $grey-t;
     border-bottom: 2px solid $grey-t;
     color: $grey-t;
+    z-index: $zIndex-headerMain;
 
     @include mq($from: 430px) {
       display: none;
@@ -54,7 +58,7 @@
   display: flex;
   align-items: center;
   margin-left: auto;
-  height: 4rem;
+  height: 3rem;
 
   &--secondary {
     display: flex;
@@ -111,7 +115,7 @@
   &::after {
     content: '';
     position: absolute;
-    bottom: 35px;
+    bottom: 25px;
     left: 0;
     height: 2px;
     width: 100%;
@@ -130,6 +134,7 @@
     align-items: center;
     height: 100%;
     width: 100%;
+    background-color: $white;
     font-family: $Gotham-M;
     text-transform: lowercase;
     @include reset-link(inherit);

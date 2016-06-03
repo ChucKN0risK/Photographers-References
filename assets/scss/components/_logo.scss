@@ -8,7 +8,17 @@
 
   .header-main & {
     color: $grey-t;
-    padding: 1rem 0;
+    padding-top: 1rem;
+
+    & .logo.onelined {
+      br { display: none; }
+
+      &::after {
+        content: ' :';
+        font-family: $Gotham-B;
+        color: inherit;
+      }
+    }
   }
   
   .footer-main & {

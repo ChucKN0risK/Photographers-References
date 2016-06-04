@@ -78,71 +78,69 @@ $(function(){
     // });
     
 
-    // var headerAnimationOnScroll = {
-    //     init: function() {
-    //         // Elements we animate
-    //         this.$body = $('body');
-    //         this.$header = $('#header-main');
-    //         this.headerHeight = this.$header.outerHeight();
-    //         this.$logo = $('#header-logo');
+    var headerAnimationOnScroll = {
+        init: function() {
+            // Elements we animate
+            this.$body = $('body');
+            this.$header = $('#header-main');
+            this.headerHeight = this.$header.outerHeight();
+            this.$logo = $('#header-logo');
 
-    //         this.didScroll = false;
-    //         this.lastScrollTop = 0;
-    //         this.scrollDelta = 5;
-    //         this.hasScrolled();
-    //         this.scrollCheck();
-    //     },
-    //     scrollCheck: function() {
-    //         var self = this;
+            this.didScroll = false;
+            this.lastScrollTop = 0;
+            this.scrollDelta = 5;
+            this.hasScrolled();
+            this.scrollCheck();
+        },
+        scrollCheck: function() {
+            var self = this;
 
-    //         // On scroll, we set the didscroll variable to true 
-    //         // so that the interval function knows the user has scrolled.
-    //         if(self.$body.hasClass('book-selected')) {
-    //             $(window).scroll(function() {
-    //                 self.didScroll = true;
-    //             });
-    //         }
+            // On scroll, we set the didscroll variable to true 
+            // so that the interval function knows the user has scrolled.
+            $(window).scroll(function() {
+                if(self.$body.hasClass('book-selected')) {
+                    self.didScroll = true;
+                }
+            });
 
-    //         // This interval function check every 250ms if 
-    //         // didScroll has changed. If so it runs the function
-    //         // and resets didScroll to false.
-    //         setInterval(function() {
-    //             if (self.didScroll) {
-    //                 self.hasScrolled();
-    //                 self.didScroll = false;
-    //             }
-    //         }, 250);
-    //     },
-    //     hasScrolled: function() {
-    //         var self = this;
-    //         // Here we store our scroll position for a later easy access
-    //         var scroll = $(window).scrollTop();
+            // This interval function check every 250ms if 
+            // didScroll has changed. If so it runs the function
+            // and resets didScroll to false.
+            setInterval(function() {
+                if (self.didScroll) {
+                    self.hasScrolled();
+                    self.didScroll = false;
+                }
+            }, 250);
+        },
+        hasScrolled: function() {
+            var self = this;
+            // Here we store our scroll position for a later easy access
+            var scroll = $(window).scrollTop();
 
-    //         // We make sure the user has scrolled more than delta
-    //         if (Math.abs(self.lastScrollTop - scroll) <= self.scrollDelta) {
-    //             return;
-    //         }
+            // We make sure the user has scrolled more than delta
+            if (Math.abs(self.lastScrollTop - scroll) <= self.scrollDelta) {
+                return;
+            }
 
-    //         // If the user has scrolled down and is past 
-    //         // the header then we hide the header by addind to it a "is-hidden" class.
-    //         if (scroll > self.lastScrollTop) {
-    //             if (scroll > self.headerHeight) {
-    //                 setTimeout(function() {
-    //                     self.$body
-    //                         .removeClass('scroll-up')
-    //                         .addClass('scroll-down');
-    //                 }, 300);
-    //             }
-    //         } else {
-    //               if ( scroll + $(window).height() < $(document).height()) {
-    //                     self.$body
-    //                         .removeClass('scroll-down')
-    //                         .addClass('scroll-up');
-    //               }
-    //         }
+            // If the user has scrolled down and is past 
+            // the header then we hide the header by addind to it a "is-hidden" class.
+            if (scroll > self.lastScrollTop) {
+                if (scroll > self.headerHeight) {
+                    // console.log('scroll sup header height');
+                    setTimeout(function() {
+                        self.$logo.addClass('onelined');
+                    }, 300);
+                }
+            } else {
+                  if ( scroll + $(window).height() < $(document).height()) {
+                        self.$logo.removeClass('onelined');
+                  }
+            }
 
-    //         self.lastScrollTop = scroll;
-    //     }
-    // };
+            self.lastScrollTop = scroll;
+        }
+    };
+    headerAnimationOnScroll.init();
 });
 

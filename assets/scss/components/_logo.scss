@@ -8,15 +8,17 @@
 
   .header-main & {
     color: $grey-t;
-    padding-top: 1rem;
 
-    & .logo.onelined {
-      br { display: none; }
+    @include mq($from : 560px) {
+      body.book-selected & .logo.onelined {
+        font-family: $Gotham-M;
+        br { display: none; }
 
-      &::after {
-        content: ' :';
-        font-family: $Gotham-B;
-        color: inherit;
+        &::after {
+          content: ' :';
+          font-family: $Gotham-B;
+          color: inherit;
+        }
       }
     }
   }
@@ -35,9 +37,11 @@
 }
 
 .author {
+  margin-top: .5rem;
   color: inherit;
   font-family: $Gotham-M;
   text-transform: uppercase;
   opacity: .7;
+  line-height: 1;
 }
 

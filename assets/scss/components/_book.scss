@@ -116,11 +116,12 @@
 }
 
 .book__title {
-  @include rms(3);
+  font-size: 1.75rem;
   margin-bottom: 1rem;
   font-family: $Gotham-M;
   text-transform: uppercase;
   color: $grey-t;
+  line-height: 1;
 }
 
 .book__price {
@@ -154,6 +155,11 @@
 
 .book__cta {
   margin-left: auto;
+  height: 100%;
+
+  button[type="submit"] {
+    height: 100%;
+  }
 }
 
 .book__video {

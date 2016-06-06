@@ -9,17 +9,26 @@
   justify-content: center;
   padding: 0 1rem;
   width: 100%;
-  height: 5rem;
+  height: $header-h;
   overflow: hidden;
   background-color: $white;
   // This z-index has to be .dropdown-menu z-index + 1
   z-index: $zIndex-headerMain;
 
-  @include mq($from: tablet) {
-    body.book-selected & {
-      height: 7rem;
+  body.book-selected & {
+    height: $header-h + $author-h;
+  }
+
+  @include mq($from: 560px) {
+    body.book-selected.logo-onelined & {
+      height: $header-h + $author-h - 1rem;
     }
-    height: 6rem;
+  }
+
+  @include mq($from: tablet) {
+    body.book-selected.logo-onelined & {
+      height: $header-h + .5rem;
+    }
   }
 }
 
@@ -28,6 +37,7 @@
   flex-flow: row wrap;
   align-items: flex-start;
   width: 100%;
+  padding: 1rem 0;
   color: $grey-t;
   @include transition();
 
@@ -38,18 +48,22 @@
 
 .header-main__nav {
   margin-left: auto;
-  margin-top: calc(1rem - 3px);
+  transform: translateY(-3px);
 
   &--secondary {
     position: fixed;
-    top: 5rem;
+    top: $header-h;
     display: flex;
     width: 100%;
-    height: 3rem;
+    height: $secondary-nav-h;
     border-top: 2px solid $grey-t;
     border-bottom: 2px solid $grey-t;
     color: $grey-t;
     z-index: $zIndex-headerMain;
+
+    body.book-selected & {
+      top: $header-h + $author-h;
+    }
 
     @include mq($from: 430px) {
       display: none;
@@ -105,6 +119,7 @@
   height: 100%;
   font-family: $Gotham-M;
   text-transform: lowercase;
+  cursor: pointer;
   @include reset-link(inherit);
   
   &:hover {

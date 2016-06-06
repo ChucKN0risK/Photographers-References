@@ -146,11 +146,13 @@ $(function(){
                 if (scroll > self.headerHeight) {
                     // console.log('scroll sup header height');
                     setTimeout(function() {
+                        self.$body.addClass('logo-onelined');
                         self.$logo.addClass('onelined');
                     }, 300);
                 }
             } else {
                   if ( scroll + $(window).height() < $(document).height()) {
+                        self.$body.removeClass('logo-onelined');
                         self.$logo.removeClass('onelined');
                   }
             }

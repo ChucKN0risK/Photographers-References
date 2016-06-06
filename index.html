@@ -27,7 +27,12 @@
                         <a href="#collection" class="header-main__link">collection</a>
                     </li>
                     <li class="header-main__menu__item">
-                        <a href="#" class="header-main__link">cart</a>
+                        <form class="header-main__link" name="_xclick" target="paypal" action="https://www.paypal.com/fr/cgi-bin/webscr" method="post">
+                            <input type="hidden" name="cmd" value="_cart">
+                            <input type="hidden" name="business" value="lsecondaire@gmail.com">
+                            <button type="submit">cart</button>
+                            <input type="hidden" name="display" value="1">
+                        </form>
                     </li>
                 </ul>
             </nav>
@@ -114,7 +119,12 @@
                                     <div class="book__price">
                                         <span class="book__price__text">20€</span>
                                         <span class="book__shipping-price">+ 5€ for<br>shipping</span>
-                                        <btn class="book__cta btn btn--medium author1">Add to cart</btn>
+                                        <form class="book__cta author1" target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                                            <input type="hidden" name="cmd" value="_s-xclick">
+                                            <input type="hidden" name="hosted_button_id" value="PPC9LTHF9BYXU">
+                                            <button type="submit" name="submit" class="btn btn--medium" alt="PayPal, le réflexe sécurité pour payer en ligne">Add to cart</button>
+                                            <img alt="" class="u-hide" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -174,7 +184,12 @@
                                     <div class="book__price">
                                         <span class="book__price__text">20€</span>
                                         <span class="book__shipping-price">+ 5€ for<br>shipping</span>
-                                        <btn class="book__cta btn btn--medium author1">Add to cart</btn>
+                                        <form class="book__cta author2" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                            <input type="hidden" name="cmd" value="_s-xclick">
+                                            <input type="hidden" name="hosted_button_id" value="79836JNV4FPWE">
+                                            <button type="submit" name="submit" class="btn btn--medium" alt="PayPal, le réflexe sécurité pour payer en ligne">Add to cart</button>
+                                            <img alt="" class="u-hide" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
+                                        </form>
                                     </div>
                                 </div>
                             </div>

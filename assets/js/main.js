@@ -52,7 +52,8 @@ $(function(){
             this.$slider.glide({
                 type: "carousel",
                 hoverpause: "true",
-                keyboard: "true"
+                keyboard: "true",
+                autoplay: "4000"
             });
         }
     };

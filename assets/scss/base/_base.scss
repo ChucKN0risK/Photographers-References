@@ -73,19 +73,17 @@ body {
   }
 
   @include mq($from: 430px) {
+    padding-top: $header-h;
+
     &.book-selected {
       padding-top: $header-h + $author-h;
     }
   }
 
   @include mq($from: 560px) {
-    &.book-selected {
+    &.book-selected.logo-onelined {
       padding-top: $header-h + $author-h - 1rem;
     }
-  }
-
-  @include mq($from: tablet) {
-    padding-top: 7rem;
   }
 }
 

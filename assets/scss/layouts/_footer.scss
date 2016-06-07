@@ -27,6 +27,7 @@
   .copyrights {
     font-family: $Time;
     margin-top: 1rem;
+    font-size: .8rem;
 
     @include mq($from: tablet) {
       margin-top: initial;

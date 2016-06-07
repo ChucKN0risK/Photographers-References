@@ -34,7 +34,7 @@ $(function(){
         events: function() {
             var _this = this;
 
-            $('.js-books-thumbs-toggler').on('click', function() {
+            $('.js-books-thumbs-toggler, .js-home-link').on('click', function() {
                 _this.close();
                 _this.$booksThumbsWrapper.removeClass('u-hide');
             });

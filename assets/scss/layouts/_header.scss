@@ -144,6 +144,11 @@
       border-right: 2px solid $grey;
     }
 
+    &::after {
+      content: '';
+      display: none;
+    }
+
     &:hover,
     &:focus {
       background-color: $grey-t;

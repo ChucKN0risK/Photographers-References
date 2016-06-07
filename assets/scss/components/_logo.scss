@@ -5,6 +5,7 @@
 .logo-container {
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 
   .header-main & {
     color: $grey-t;

@@ -71,5 +71,9 @@ section {
   display: flex;
   flex-direction: column;
   padding-bottom: 2rem;
+
+  body.book-selected & {
+    background-image: linear-gradient($white, $lightgrey);
+  }
 }
 

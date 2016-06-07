@@ -45,17 +45,12 @@
 
   .book-thumb:hover &.author1,
   &.author1:hover {
-    background-color: $gold;
+    background-color: $pink;
   }
 
   .book-thumb:hover &.author2,
   &.author2:hover {
     background-color: $blue;
-  }
-
-  .book-thumb:hover &.author3,
-  &.author3:hover {
-    background-color: $pink;
   }
 }
 

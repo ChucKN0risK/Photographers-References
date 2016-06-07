@@ -20,20 +20,58 @@
 
   @include mq($from: tablet) {
     flex-direction: row;
-    align-items: flex-end;
+    align-items: center;
     padding: 1rem 0;
+  }
+
+  .footer-main__text {
+    margin-top: 1rem;
+    width: 100%;
+
+    @include mq($from: tablet) {
+      display: flex;
+      align-items: baseline;
+      height: 2rem;
+      width: initial;
+      margin-top: initial;
+      margin-left: auto;
+    }
+  }
+
+  .footer-main__text__item {
+
+    &:not(:last-child) {
+      margin-bottom: .3rem;
+
+      @include mq($from: tablet) {
+        margin-bottom: initial;
+        margin-right: 1rem;
+      }
+    }
+
+    @include mq($from: tablet) {
+      display: inline-block;
+      float: left;
+    }
+  }
+
+  .contact {
+    display: inline-block;
+    padding-bottom: .1rem;
+    height: 100%;
+    font-size: .8rem;
+    color: $white;
+    &::after { 
+      background-color: $white;
+    }
   }
 
   .copyrights {
     font-family: $Time;
-    margin-top: 1rem;
     font-size: .8rem;
 
     @include mq($from: tablet) {
-      margin-top: initial;
-      margin-left: auto;
-      line-height: 1;
-      br { display: none; }
+      line-height: 2rem;
     }
   }
 }

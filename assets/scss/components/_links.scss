@@ -3,17 +3,39 @@
    ======================= */
 
 %link {
-  color: $blue;
-  @include transition();
-  &:hover {
-    text-decoration: none;
-    color: shade($blue, 20%);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+  font-family: $Gotham-M;
+  text-transform: lowercase;
+  text-decoration: none;
+  cursor: pointer;
+  @include reset-link(inherit);
+  
+  &:hover::after {
+    transform: scaleX(1);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: $grey-t;
+    display: block;
+    transform: scaleX(0);
+    transform-origin: left;
+    @include transition;
+    will-change: transform;
   }
 }
 
 a {
   @extend %link;
-  text-decoration: underline;
 }
 
 .link--icon {
@@ -21,32 +43,11 @@ a {
   display: flex;
   justify-content: flex-start;
   text-decoration: none;
-  // & > i {
-  //   margin-right: .3rem;
-  // }
-  // @include mq($from: mobile) {
-  //   & > i {
-  //     @include size(100%);
-  //   }
-  // }
-  // @include mq($from: tablet) {
-  //   & > i {
-  //   }
-  // }
 }
 
 .link--icon-rtl {
   @extend %link;
   display: flex;
   text-decoration: none;
-  // & > i {
-  //     @include transition();
-  //     margin-left: .3rem;
-  // }
-  // &:hover {
-  //     & > i {
-  //         transform: translateX(.3rem);
-  //     }
-  // }
 }
 

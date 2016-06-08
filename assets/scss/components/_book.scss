@@ -82,6 +82,8 @@
 
 .book__description {
   color: $grey-t;
+  @include transition;
+  will-change: transform;
 }
 
 .book__img-wrapper {
@@ -117,6 +119,17 @@
   text-transform: uppercase;
   color: $black;
   line-height: 1;
+  opacity: 1;
+  will-change: opacity;
+  @include transition;
+
+  &.is-hidden {
+    opacity: 0;
+
+    & + .book__description {
+      transform: translateY(-3rem);
+    }
+  }
 }
 
 .book__price {

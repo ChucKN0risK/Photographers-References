@@ -16,7 +16,7 @@
   z-index: $zIndex-headerMain;
 
   body.book-selected & {
-    height: $header-h + $author-h;
+    height: $header-h;
   }
 
   @include mq($from: 560px) {
@@ -27,7 +27,7 @@
 
   @include mq($from: tablet) {
     body.book-selected.logo-onelined & {
-      height: $header-h + .5rem;
+      height: $header-h + .2rem;
     }
   }
 }

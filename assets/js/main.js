@@ -34,7 +34,7 @@ $(function(){
             this.$booksThumbsWrapper.addClass('u-hide');
             this.$wrapper.removeClass('u-hide');
             this.$el.siblings().addClass('u-hide');
-            this.$title.text('')
+            this.$title.text('');
             this.initSlider();
             this.isShown = true;
             console.log('open');
@@ -60,24 +60,9 @@ $(function(){
 
     $('.js-book-selector').click(function(){
         new Book($('#' + $(this).data('book')));
-        $('.js-book-author').removeClass('u-hide').text($(this).data('author'));
+        $('.js-book-author').text($(this).data('author'));
         $('.js-book-title').text($(this).data('author'));
     });
-
-    // $(window).scroll(function() {
-    //     var scroll = $(window).scrollTop(),
-    //         scrollDelta = 5;
-    //         lastScrollTop = 0;
-
-    //     if ( $('body').hasClass('book-selected') ) {
-    //         if (Math.abs(lastScrollTop - scroll) <= scrollDelta) {
-                
-    //         }
-    //     } else {
-
-    //     }
-    // });
-    
 
     var headerAnimationOnScroll = {
         init: function() {
@@ -86,6 +71,8 @@ $(function(){
             this.$header = $('#header-main');
             this.headerHeight = this.$header.outerHeight();
             this.$logo = $('#header-logo');
+            this.$authorLogo = $('.js-book-author');
+            this.$authorBook = $('.js-book-title');
 
             this.didScroll = false;
             this.lastScrollTop = 0;
@@ -132,12 +119,20 @@ $(function(){
                     setTimeout(function() {
                         self.$body.addClass('logo-onelined');
                         self.$logo.addClass('onelined');
+                        self.$authorLogo.removeClass('u-hide');
+                        self.$authorBook.addClass('is-hidden');
+                        console.log('scroll down');
                     }, 300);
                 }
             } else {
                   if ( scroll + $(window).height() < $(document).height()) {
+                    setTimeout(function() {
+                        console.log('scroll up');
                         self.$body.removeClass('logo-onelined');
                         self.$logo.removeClass('onelined');
+                        self.$authorLogo.addClass('u-hide');
+                        self.$authorBook.removeClass('is-hidden');
+                    }, 300);                        
                   }
             }
 

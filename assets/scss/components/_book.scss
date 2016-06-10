@@ -179,3 +179,25 @@
     margin-top: 2rem;
   }
 }
+
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 9rem;
+  max-width: 9rem;
+  height: 3rem;
+  margin-left: .5rem;
+
+  input[type="checkbox"] {
+    margin-right: .5rem;
+  }
+  input[type="number"] {
+    height: 2rem;
+    width: 3rem;
+    max-width: 3rem;
+    margin-left: .5rem;
+    text-align: center;
+    background-color: $white;
+  }
+}

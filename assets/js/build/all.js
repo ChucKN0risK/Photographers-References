@@ -132,19 +132,16 @@ $(function(){
             // the header then we hide the header by addind to it a "is-hidden" class.
             if (scroll > self.lastScrollTop) {
                 if (scroll > self.headerHeight) {
-                    // console.log('scroll sup header height');
                     setTimeout(function() {
                         self.$body.addClass('logo-onelined');
                         self.$logo.addClass('onelined');
                         self.$authorLogo.removeClass('u-hide');
                         self.$authorBook.addClass('is-hidden');
-                        console.log('scroll down');
                     }, 300);
                 }
             } else {
                   if ( scroll + $(window).height() < $(document).height()) {
                     setTimeout(function() {
-                        console.log('scroll up');
                         self.$body.removeClass('logo-onelined');
                         self.$logo.removeClass('onelined');
                         self.$authorLogo.addClass('u-hide');
@@ -157,5 +154,60 @@ $(function(){
         }
     };
     headerAnimationOnScroll.init();
+
+    var $inputs = $('input[type="checkbox"]');
+    var $shopButton = $('.js-shop-button');
+    var $cart = $('.js-cart');
+    var $form = $('.js-form');
+    var currency = 'USD';
+    var sign = '$';
+
+    $('.js-updatePrice').on('change', function() {
+        var total = 0;
+        var shipping = 5;
+        $inputs.each(function(i, el){
+            if($(el).is(':checked')){
+                console.log($(this));
+                var quantity = $(el).parent().find('input[type="number"]').val();
+                console.log(parseInt($(el).attr('data-price-' + currency.toLowerCase())));
+                total += (parseInt($(el).attr('data-price-' + currency.toLowerCase())) + shipping) * quantity;  
+            }
+        });
+        if(total > 0) { 
+            $shopButton.find('.shop-button-price').text(sign + total); 
+        }
+    });
+
+    function updateCart(){
+        $cart.html('');
+        var index = 1;
+        $inputs.each(function(i, el){
+            if($(el).is(':checked')){
+                $cart.append($('<input>').attr({
+                    type: 'hidden',
+                    name: 'item_name_' + index
+                }).val($(el).data('item')));
+                $cart.append($('<input>').attr({
+                    type: 'hidden',
+                    name: 'amount_' + index
+                }).val($(el).data('price-' + currency.toLowerCase())));
+                $cart.append($('<input>').attr({
+                    type: 'hidden',
+                    name: 'quantity_' + index
+                }).val($(el).parent().find('input[type="number"]').val()));
+                $cart.append($('<input>').attr({
+                    type: 'hidden',
+                    name: 'shipping_' + index
+                }).val(5));
+                index++;
+            }
+        });
+    }
+
+    $('.js-submit').on('click', function(e) {
+        e.preventDefault();
+        updateCart();
+        $form.submit();
+    });
 });
 

@@ -27,11 +27,24 @@
                         <a href="#collection" class="header-main__link">collection</a>
                     </li>
                     <li class="header-main__menu__item">
-                        <form class="header-main__link" name="_xclick" target="paypal" action="https://www.paypal.com/fr/cgi-bin/webscr" method="post">
+                        <form class="header-main__link js-form" action="https://www.paypal.com/cgi-bin/webscr" method="post">
                             <input type="hidden" name="cmd" value="_cart">
-                            <input type="hidden" name="business" value="lsecondaire@gmail.com">
-                            <button type="submit">cart</button>
-                            <input type="hidden" name="display" value="1">
+                            <input type="hidden" name="business" value="2CHD9W6FDM4MS">
+                            <input type="hidden" name="lc" value="EN">
+                            <input type="hidden" name="button_subtype" value="products">
+                            <input type="hidden" name="no_note" value="0">
+                            <input type="hidden" name="cn" value="Ajouter des instructions particulières pour le vendeur">
+                            <input type="hidden" name="no_shipping" value="2">
+                            <input type="hidden" name="rm" value="1">
+                            <input type="hidden" name="return" value="http://photographersreferences.com/thanks.html">
+                            <input type="hidden" name="cancel_return" value="http://photographersreferences.com/cancelled.html">
+                            <input type="hidden" name="currency_code" value="EUR">
+                            <input type="hidden" name="upload" value="1">
+                            <div class="js-cart"></div>
+                            <button type="submit" class="js-shop-button js-submit">
+                                <span class="shop-button-price u-hide">0$</span>
+                                <span class="shop-button-text"><span>cart</span></span>
+                            </button>
                         </form>
                     </li>
                 </ul>
@@ -124,14 +137,19 @@
                                     <p><span class="logo">Photographers' References</span> is a book collection of in-depth interviews with established photographers. Goldblatt</p>
                                     <p>Each conversation held over an extended period of time exposes a photographer's thought processes and provides insight into their pratice, mapping out personnal references and influences that have contributed to shape their distinctive visual language.</p>
                                     <div class="book__price">
-                                        <span class="book__price__text">20€</span>
-                                        <span class="book__shipping-price">+ 5€ for<br>shipping</span>
-                                        <form class="book__cta author1" target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                                        <span class="book__price__text">20$</span>
+                                        <span class="book__shipping-price">+ 5$ for<br>shipping</span>
+                                        <form class="book__cta author1 u-hide" target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
                                             <input type="hidden" name="cmd" value="_s-xclick">
                                             <input type="hidden" name="hosted_button_id" value="PPC9LTHF9BYXU">
                                             <button type="submit" name="submit" class="btn btn--medium" alt="PayPal, le réflexe sécurité pour payer en ligne">Add to cart</button>
                                             <img alt="" class="u-hide" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
                                         </form>
+                                        <label class="quantity-selector" for="goldblatt">
+                                            <input type="checkbox" data-item="Photographers References - David Goldblatt" data-price-usd="20" class="js-updatePrice" value="checkbox">
+                                            I want 
+                                            <input type="number" class="js-updatePrice" min="1" value="1">
+                                        </label>
                                     </div>
                                 </div>
                             </div>
@@ -198,12 +216,15 @@
                                     <div class="book__price">
                                         <span class="book__price__text">20€</span>
                                         <span class="book__shipping-price">+ 5€ for<br>shipping</span>
-                                        <form class="book__cta author2" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                        <form class="book__cta author2 u-hide" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                                             <input type="hidden" name="cmd" value="_s-xclick">
                                             <input type="hidden" name="hosted_button_id" value="79836JNV4FPWE">
                                             <button type="submit" name="submit" class="btn btn--medium" alt="PayPal, le réflexe sécurité pour payer en ligne">Add to cart</button>
                                             <img alt="" class="u-hide" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
                                         </form>
+                                        <label class="quantity-selector" for="misrach">
+                                            <input type="checkbox" data-item="Photographers References - Richard Misrach" data-price-usd="20" class="js-updatePrice" value="checkbox">I want <input type="number" class="js-updatePrice" min="1" value="1">
+                                        </label>
                                     </div>
                                 </div>
                             </div>

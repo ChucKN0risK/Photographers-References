@@ -16,7 +16,7 @@
   z-index: $zIndex-headerMain;
 
   body.book-selected & {
-    height: $header-h;
+    height: $header-h + $author-h;
   }
 
   @include mq($from: 560px) {

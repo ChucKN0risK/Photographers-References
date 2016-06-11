@@ -27,7 +27,7 @@
                         <a href="#collection" class="header-main__link">collection</a>
                     </li>
                     <li class="header-main__menu__item">
-                       <a href="#0" class="header-main__link header-main__link--cart is-disabled js-cart-toggler" data-products-selected="0">
+                       <a href="#" class="header-main__link header-main__link--cart is-disabled js-cart-toggler">
                             cart (<span class="js-products-selected"></span>)
                         </a> 
                     </li>
@@ -35,26 +35,25 @@
             </nav>
         </div>
     </header>
-
-    <form class="header-main__link js-form" action="https://www.paypal.com/cgi-bin/webscr" method="post">
-        <input type="hidden" name="cmd" value="_cart">
-        <input type="hidden" name="business" value="2CHD9W6FDM4MS">
-        <input type="hidden" name="lc" value="EN">
-        <input type="hidden" name="button_subtype" value="products">
-        <input type="hidden" name="no_note" value="0">
-        <input type="hidden" name="cn" value="Ajouter des instructions particulières pour le vendeur">
-        <input type="hidden" name="no_shipping" value="2">
-        <input type="hidden" name="rm" value="1">
-        <input type="hidden" name="return" value="http://photographersreferences.com/thanks.html">
-        <input type="hidden" name="cancel_return" value="http://photographersreferences.com/cancelled.html">
-        <input type="hidden" name="currency_code" value="EUR">
-        <input type="hidden" name="upload" value="1">
-        <div class="js-paypal-cart"></div>
-        <button type="submit" class="js-shop-button js-submit">
-            <span class="shop-button-price u-hide">0$</span>
-            <span class="shop-button-text"><span>cart</span></span>
-        </button>
-    </form>
+    
+    <div class="cart-wrapper js-cart-wrapper u-max-content-width">
+        <form class="cart js-form js-cart" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+            <input type="hidden" name="cmd" value="_cart">
+            <input type="hidden" name="business" value="2CHD9W6FDM4MS">
+            <input type="hidden" name="lc" value="EN">
+            <input type="hidden" name="button_subtype" value="products">
+            <input type="hidden" name="no_note" value="0">
+            <input type="hidden" name="cn" value="Ajouter des instructions particulières pour le vendeur">
+            <input type="hidden" name="no_shipping" value="2">
+            <input type="hidden" name="rm" value="1">
+            <input type="hidden" name="return" value="http://photographersreferences.com/thanks.html">
+            <input type="hidden" name="cancel_return" value="http://photographersreferences.com/cancelled.html">
+            <input type="hidden" name="currency_code" value="EUR">
+            <input type="hidden" name="upload" value="1">
+            <div class="js-paypal-cart"></div>
+            <button type="submit" class="cart__submit js-shop-button js-submit">Check Out</button>
+        </form>
+    </div>
 
     <nav class="header-main__nav--secondary">
         <ul class="header-main__menu--secondary u-list-reset">
@@ -150,7 +149,7 @@
                                             <img alt="" class="u-hide" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
                                         </form>
                                         <label class="quantity-selector" for="goldblatt">
-                                            <input type="checkbox" data-item="David Goldblatt" data-price-usd="20" class="js-updatePrice" value="checkbox">
+                                            <input type="checkbox" data-item="David Goldblatt" data-price-usd="20" class="js-product-selector js-updatePrice" value="checkbox">
                                             I want 
                                             <input type="number" class="js-updatePrice" min="1" value="1">
                                         </label>
@@ -227,7 +226,7 @@
                                             <img alt="" class="u-hide" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
                                         </form>
                                         <label class="quantity-selector" for="misrach">
-                                            <input type="checkbox" data-item="Richard Misrach" data-price-usd="20" class="js-updatePrice" value="checkbox">I want <input type="number" class="js-updatePrice" min="1" value="1">
+                                            <input type="checkbox" data-item="Richard Misrach" data-price-usd="20" class="js-product-selector js-updatePrice" value="checkbox">I want <input type="number" class="js-updatePrice" min="1" value="1">
                                         </label>
                                     </div>
                                 </div>

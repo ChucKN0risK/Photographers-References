@@ -1,0 +1,98 @@
+/* ==========================
+   Components / Cart
+   ========================== */
+
+.cart-wrapper {
+  display: flex;
+  position: fixed;
+  top: $header-h;
+  height: 20rem;
+  width: 100%;
+  margin: auto;
+  right: 0;
+  left: 0;
+  background-color: transparent;
+  z-index: $zIndex-cart;
+  opacity: 0;
+  visibility: hidden;
+  @include transition;
+  will-change: opacity;
+  transform: translateY(-1rem);
+
+  body.book-selected & {
+    top: $header-h;
+  }
+
+  body.book-selected.logo-onelined & {
+    top: $header-h + $author-h;
+  }
+
+  &.is-active {
+    transform: none;
+    opacity: 1;
+    visibility: initial;
+  }
+}
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  width: 100%;
+  max-width: 20rem;
+  background-color: $red;
+  font-family: $Gotham-M;
+  @include transition;
+}
+
+.cart__product,
+.cart__summary,
+.cart__submit {
+  width: 100%;
+  padding: .5rem;
+  font-family: inherit;
+  z-index: 10;
+}
+
+.cart__product,
+.cart__summary {
+  border: 1px solid $grey-t;
+  background-color: $white;
+
+  & + & { border-top: none; }
+}
+
+.cart__product-details {
+  font-family: $Time;
+}
+
+.cart__product-quantity,
+.cart__product-price {
+  font-family: inherit;
+}
+
+.cart__product-quantity {
+  &::after {
+    content: 'x';
+    margin-left: 4px;
+  }
+}
+
+.cart__summary {
+
+}
+
+.cart__summary__item {
+
+  &::before {
+    content: '-';
+  }
+}
+
+.cart__submit {
+  @include flex-absolute-center;
+  background-color: $black;
+  text-transform: uppercase;
+  color: $white;
+  cursor: pointer;
+}

@@ -157,45 +157,49 @@ $(function(){
 
     var $inputs = $('input[type="checkbox"]');
     var $shopButton = $('.js-shop-button');
-    var $cart = $('.js-cart');
+    var $paypalCart = $('.js-paypal-cart');
     var $form = $('.js-form');
+    var $cartToggler = $('.js-cart-toggler');
     var currency = 'USD';
     var sign = '$';
 
     $('.js-updatePrice').on('change', function() {
-        var total = 0;
+        var totalPrice = 0;
         var shipping = 5;
         $inputs.each(function(i, el){
             if($(el).is(':checked')){
-                console.log($(this));
-                var quantity = $(el).parent().find('input[type="number"]').val();
-                console.log(parseInt($(el).attr('data-price-' + currency.toLowerCase())));
-                total += (parseInt($(el).attr('data-price-' + currency.toLowerCase())) + shipping) * quantity;  
+                var quantity = $(el).parent().find('input[type="number"]').addClass('counting').val();
+                totalPrice += (parseInt($(el).attr('data-price-' + currency.toLowerCase())) + shipping) * quantity; 
+                updateQuantity(quantity);
             }
         });
-        if(total > 0) { 
-            $shopButton.find('.shop-button-price').text(sign + total); 
+        if(totalPrice > 0) { 
+            $shopButton.find('.shop-button-price').text(sign + totalPrice);
+            $cartToggler.removeClass('is-disabled');
+        } else {
+            $cartToggler.addClass('is-disabled');
         }
+        updateCart();
     });
 
     function updateCart(){
-        $cart.html('');
+        $paypalCart.html('');
         var index = 1;
         $inputs.each(function(i, el){
             if($(el).is(':checked')){
-                $cart.append($('<input>').attr({
+                $paypalCart.append($('<input>').attr({
                     type: 'hidden',
                     name: 'item_name_' + index
                 }).val($(el).data('item')));
-                $cart.append($('<input>').attr({
+                $paypalCart.append($('<input>').attr({
                     type: 'hidden',
                     name: 'amount_' + index
                 }).val($(el).data('price-' + currency.toLowerCase())));
-                $cart.append($('<input>').attr({
+                $paypalCart.append($('<input>').attr({
                     type: 'hidden',
                     name: 'quantity_' + index
                 }).val($(el).parent().find('input[type="number"]').val()));
-                $cart.append($('<input>').attr({
+                $paypalCart.append($('<input>').attr({
                     type: 'hidden',
                     name: 'shipping_' + index
                 }).val(5));
@@ -204,10 +208,20 @@ $(function(){
         });
     }
 
+    function updateQuantity(number) {
+        var quantity = 0;
+        $('.counting').each(function() {
+            quantity += +$(this).val();
+        });
+        $cartToggler.find('.js-products-selected').html(quantity);
+    }
+
     $('.js-submit').on('click', function(e) {
         e.preventDefault();
         updateCart();
         $form.submit();
     });
+
+
 });
 

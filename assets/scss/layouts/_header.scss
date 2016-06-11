@@ -162,5 +162,19 @@
   }
 }
 
+.header-main__link--cart {
+  position: relative;
+  @include transition;
+
+  &.is-disabled {
+    opacity: .7;
+    pointer-events: none;
+
+    &::after {
+      display: none;
+    }
+  }
+}
+
 
 

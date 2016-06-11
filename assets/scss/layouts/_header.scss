@@ -12,10 +12,11 @@
   height: $header-h;
   overflow: hidden;
   background-color: $white;
+  border-bottom: 1px solid $black;
   // This z-index has to be .dropdown-menu z-index + 1
   z-index: $zIndex-headerMain;
 
-  body.book-selected & {
+  body.book-selected.logo-onelined & {
     height: $header-h + $author-h;
   }
 
@@ -62,6 +63,10 @@
     z-index: $zIndex-headerMain;
 
     body.book-selected & {
+      top: $header-h;
+    }
+
+    body.book-selected.logo-onelined & {
       top: $header-h + $author-h;
     }
 

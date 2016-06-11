@@ -69,6 +69,9 @@ body {
   padding-top: $header-h + $secondary-nav-h;
 
   &.book-selected {
+    padding-top: $header-h + $secondary-nav-h;
+  }
+  &.book-selected.logo-onelined {
     padding-top: $header-h + $secondary-nav-h + $author-h;
   }
 
@@ -77,6 +80,9 @@ body {
 
     &.book-selected {
       padding-top: $header-h;
+    }
+    &.book-selected.logo-onelined {
+      padding-top: $header-h + $author-h;
     }
   }
 

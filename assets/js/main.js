@@ -198,6 +198,22 @@ $(function(){
         });
         $cartToggler.find('.js-products-selected').html(quantity);
     }
+    
+    var selectedBooks = [];
+    function getSelectedProducts() {
+        $('.js-product-selector').on('change', function() {
+            if ($(this).is(':checked')) {
+                selectedBooks.push($(this).data('item'));
+            } else {
+                var index = selectedBooks.indexOf($(this));
+                selectedBooks.splice(index, 1);
+            }
+            $cartToggler.find('.js-products-selected').html(selectedBooks.length);
+            console.log(selectedBooks.length);
+        });
+        return selectedBooks;
+    }
+    getSelectedProducts();
 
     $('.js-submit').on('click', function(e) {
         e.preventDefault();

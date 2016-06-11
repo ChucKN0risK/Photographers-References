@@ -163,10 +163,16 @@
 
 .header-main__link--cart {
   position: relative;
+  background-color: $grey-t;
+  padding: 0 .5rem;
+  color: $white;
   @include transition;
 
   &.is-disabled {
-    opacity: .7;
+    opacity: .6;
+    background-color: transparent;
+    padding: 0;
+    color: $grey-t;
     pointer-events: none;
 
     &::after {

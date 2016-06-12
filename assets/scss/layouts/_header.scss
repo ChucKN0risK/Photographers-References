@@ -163,9 +163,6 @@
 
 .header-main__link--cart {
   position: relative;
-  background-color: $grey-t;
-  padding: 0 .5rem;
-  color: $white;
   @include transition;
 
   &.is-disabled {

@@ -45,12 +45,12 @@
 
   .book-thumb:hover &.author1,
   &.author1:hover {
-    background-color: $pink;
+    background-color: $blue;
   }
 
   .book-thumb:hover &.author2,
   &.author2:hover {
-    background-color: $blue;
+    background-color: $pink;
   }
 }
 
@@ -73,9 +73,11 @@
       margin-bottom: initial;
       margin-right: 2rem;
       max-width: calc(100% - 27rem);
+      width: calc(100% - 27rem);
     }
     .book__infos {
       max-width: 25rem;
+      width: 25rem;
     }
   }
 }
@@ -93,6 +95,18 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 2rem;
+
+  @include mq($from: desktop) {
+    .glide__arrows {
+      opacity: 0;
+      @include transition;
+      will-change: opacity;
+    }
+
+    &:hover .glide__arrows {
+      opacity: 1;
+    }
+  }
 }
 
 .book__img {

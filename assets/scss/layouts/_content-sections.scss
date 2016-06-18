@@ -46,6 +46,8 @@ section {
   @include rms(2);
   margin-bottom: 1.5rem;
   text-transform: uppercase;
+  font-family: $Gotham-B;
+  line-height: 1.2;
 
   @include mq($from: tablet) {
     margin-bottom: initial;
@@ -73,7 +75,7 @@ section {
   padding-bottom: 2rem;
 
   body.book-selected & {
-    background-image: linear-gradient($white, $lightgrey);
+    background-color: $lightgrey;
   }
 }
 

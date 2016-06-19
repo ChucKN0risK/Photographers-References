@@ -12,7 +12,7 @@
 
     @include mq($from : 560px) {
       body.book-selected & .logo.onelined {
-        font-family: $Gotham-M;
+        font-family: $Gotham-B;
         br { display: none; }
       }
     }
@@ -33,7 +33,7 @@
 
 .author {
   color: inherit;
-  font-family: $Gotham-M;
+  font-family: $Gotham-B;
   text-transform: uppercase;
 }
 

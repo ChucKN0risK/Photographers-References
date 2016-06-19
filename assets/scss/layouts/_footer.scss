@@ -30,7 +30,7 @@
 
     @include mq($from: tablet) {
       display: flex;
-      align-items: baseline;
+      align-items: flex-end;
       height: 2rem;
       width: initial;
       margin-top: initial;
@@ -39,6 +39,7 @@
   }
 
   .footer-main__text__item {
+    line-height: 1;
 
     &:not(:last-child) {
       margin-bottom: .3rem;
@@ -46,6 +47,7 @@
       @include mq($from: tablet) {
         margin-bottom: initial;
         margin-right: 1rem;
+        transform: translateY(.2rem);
       }
     }
 
@@ -70,8 +72,8 @@
     font-family: $Time;
     font-size: .8rem;
 
-    @include mq($from: tablet) {
-      line-height: 2rem;
-    }
+    // @include mq($from: tablet) {
+    //   line-height: 2rem;
+    // }
   }
 }

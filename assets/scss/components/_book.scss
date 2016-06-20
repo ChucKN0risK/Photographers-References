@@ -7,6 +7,11 @@
   flex-flow: row wrap;
   justify-content: space-between;
   width: 100%;
+  padding-bottom: 2rem;
+
+  @include mq($from: tablet) {
+    padding-bottom: 5rem;
+  }
 }
 
 .book-thumb {
@@ -82,6 +87,47 @@
   }
 }
 
+.book__content-part {
+  display: flex;
+  height: auto;
+  width: 100%;
+}
+
+.book__content-part--main {
+  padding-bottom: 2rem;
+  @include mq($from: tablet) {
+    height: 24.5rem;
+  }
+}
+
+.book__content-part--video {
+  position: relative;
+  background-color: $lightgrey;
+  padding-bottom: 2rem;
+
+  @include mq($from: tablet) {
+    padding-bottom: 5rem;
+  }
+  
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: $lightgrey;
+  }
+
+  &::before {
+    right: 100%;
+  }
+  &::after {
+    left: 100%;
+  }
+}
+
 .book__description {
   color: $grey-t;
   @include transition;
@@ -122,8 +168,14 @@
 }
 
 .book__infos {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   margin-bottom: 2rem;
+
+  @include mq($from: tablet) {
+    margin-bottom: initial;
+  }
 }
 
 .book__title {
@@ -146,12 +198,22 @@
   }
 }
 
+.book__description {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
 .book__price {
   display: flex;
   margin-top: 1rem;
   height: 3rem;
   color: $grey-t;
   font-family: $Gotham-M;
+
+  @include mq($from: tablet) {
+    margin-top: auto;
+  }
 
   .book__price__text,
   .book__shipping-price {

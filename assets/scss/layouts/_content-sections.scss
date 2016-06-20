@@ -64,7 +64,7 @@ section {
   margin-right: auto;
 
   @include mq($from: tablet) {
-    padding: 3rem 0;
+    padding-top: 3rem;
   }
 }
 
@@ -72,10 +72,7 @@ section {
   position: relative;
   display: flex;
   flex-direction: column;
-  padding-bottom: 2rem;
-
-  body.book-selected & {
-    background-color: $lightgrey;
-  }
+  padding-bottom: initial;
+  overflow: hidden;
 }
 

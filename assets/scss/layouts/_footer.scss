@@ -25,14 +25,15 @@
   }
 
   .footer-main__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
     margin-top: 1rem;
     width: 100%;
     max-width: 30rem;
 
     @include mq($from: tablet) {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
       height: 2rem;
       margin-top: initial;
       margin-left: auto;
@@ -48,7 +49,7 @@
       @include mq($from: tablet) {
         margin-bottom: initial;
         margin-right: 1rem;
-        transform: translateY(.2rem);
+        transform: translateY(-.2rem);
       }
     }
 
@@ -64,6 +65,7 @@
     height: 100%;
     font-size: .8rem;
     color: $white;
+
     &::after { 
       background-color: $white;
     }
@@ -72,9 +74,5 @@
   .copyrights {
     font-family: $Time;
     font-size: .8rem;
-
-    // @include mq($from: tablet) {
-    //   line-height: 2rem;
-    // }
   }
 }

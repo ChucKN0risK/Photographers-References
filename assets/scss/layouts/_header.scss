@@ -69,7 +69,7 @@
       top: $header-h + $author-h;
     }
 
-    @include mq($from: 430px) {
+    @include mq($from: 500px) {
       display: none;
     }
   }
@@ -110,7 +110,7 @@
 .header-main__menu__item--secondary {
   display: none;
 
-  @include mq($from: 430px) {
+  @include mq($from: 500px) {
     display: flex;
   }
 }

@@ -44,7 +44,6 @@ $(function(){
             this.$booksThumbsWrapper.removeClass('u-hide');
             this.$wrapper.addClass('u-hide');
             this.$el.siblings().removeClass('u-hide');
-            $('.js-book-author').addClass('u-hide');
             this.isShown = false;
             console.log('close');
         },
@@ -118,7 +117,6 @@ $(function(){
                     setTimeout(function() {
                         self.$body.addClass('logo-onelined');
                         self.$logo.addClass('onelined');
-                        self.$authorLogo.removeClass('u-hide');
                         self.$authorBook.addClass('is-hidden');
                     }, 300);
                 }
@@ -127,7 +125,6 @@ $(function(){
                     setTimeout(function() {
                         self.$body.removeClass('logo-onelined');
                         self.$logo.removeClass('onelined');
-                        self.$authorLogo.addClass('u-hide');
                         self.$authorBook.removeClass('is-hidden');
                     }, 300);                        
                   }

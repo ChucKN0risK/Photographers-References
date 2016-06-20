@@ -13,7 +13,18 @@
     @include mq($from : 560px) {
       body.book-selected & .logo.onelined {
         font-family: $Gotham-B;
-        br { display: none; }
+        // br { display: none; }
+
+        .author {
+          opacity: 1;
+
+          &::before {
+            content: ':';
+            font-family: inherit;
+            color: inherit;
+            margin-right: 4px;
+          }
+        }
       }
     }
   }
@@ -35,5 +46,8 @@
   color: inherit;
   font-family: $Gotham-B;
   text-transform: uppercase;
+  will-change: opacity;
+  opacity: 0;
+  @include transition;
 }
 

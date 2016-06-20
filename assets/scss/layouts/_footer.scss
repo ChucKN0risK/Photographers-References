@@ -27,12 +27,13 @@
   .footer-main__text {
     margin-top: 1rem;
     width: 100%;
+    max-width: 30rem;
 
     @include mq($from: tablet) {
       display: flex;
+      justify-content: space-between;
       align-items: flex-end;
       height: 2rem;
-      width: initial;
       margin-top: initial;
       margin-left: auto;
     }

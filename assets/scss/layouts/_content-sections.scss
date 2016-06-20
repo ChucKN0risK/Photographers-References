@@ -43,7 +43,7 @@ section {
 
 .section__title {
   br { display: none; }
-  @include rms(2);
+  @include rms(0);
   margin-bottom: 1.5rem;
   text-transform: uppercase;
   font-family: $Gotham-B;

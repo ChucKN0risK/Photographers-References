@@ -117,7 +117,6 @@ $(function(){
                     setTimeout(function() {
                         self.$body.addClass('logo-onelined');
                         self.$logo.addClass('onelined');
-                        self.$authorBook.addClass('is-hidden');
                     }, 300);
                 }
             } else {
@@ -125,7 +124,6 @@ $(function(){
                     setTimeout(function() {
                         self.$body.removeClass('logo-onelined');
                         self.$logo.removeClass('onelined');
-                        self.$authorBook.removeClass('is-hidden');
                     }, 300);                        
                   }
             }

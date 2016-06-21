@@ -5,25 +5,42 @@
 .logo-container {
   display: flex;
   flex-direction: column;
+  // Leave place for the cart
+  max-width: calc(100% - 7rem);
   cursor: pointer;
 
   .header-main & {
     color: $grey-t;
+    
+    // @include mq($from: mobile) {
+    //   body.book-selected & .logo.onelined {
+    //     font-family: $Gotham-B;
+    //     br { display: none; }
 
-    @include mq($from : 560px) {
+    //     .author {
+    //       opacity: 1;
+    //     }
+    //   }
+    // }
+
+    @include mq($from : mobile) {
       body.book-selected & .logo.onelined {
         font-family: $Gotham-B;
-        // br { display: none; }
-
-        .author {
+        .logo-separator {
           opacity: 1;
+        }
+        .author {
+          display: inherit;
+          opacity: 1;
+        }
+      }
+    }
 
-          &::before {
-            content: ':';
-            font-family: inherit;
-            color: inherit;
-            margin-right: 4px;
-          }
+    @include mq($from: 630px) {
+      body.book-selected & .logo.onelined {
+        font-family: $Gotham-B;
+        .author {
+          display: inline;
         }
       }
     }
@@ -42,12 +59,16 @@
   line-height: 1.2;
 }
 
+.author,
+.logo-separator {
+  opacity: 0;
+  will-change: opacity;
+  @include transition;
+}
+
 .author {
   color: inherit;
   font-family: $Gotham-B;
   text-transform: uppercase;
-  will-change: opacity;
-  opacity: 0;
-  @include transition;
 }
 
